@@ -1,14 +1,15 @@
 import {useState} from 'react'
 
-export const AgregarTarea = () => {
+export const AgregarTarea = ( { agregarTarea }) => {
 
     const [inputValue, setInputValue] = useState("")
     const onInputChange = (event) => {
         setInputValue(event.target.value)
     }
     const onSubmit = (event) => {
+        
         event.preventDefault()
-        console.log(event)
+        agregarTarea(inputValue)
     }
   return (
    <form onSubmit={(event) => onSubmit(event)}>
